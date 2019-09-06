@@ -35,7 +35,7 @@ export default class Touchables extends Component {
 
             <Text style={styles.interiorContainerText}>Username</Text>
 
-            <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+            <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
               <View style={styles.mediumGrayButton}>
                 <Text style={styles.buttonText}>Vote</Text>
               </View>
@@ -47,7 +47,7 @@ export default class Touchables extends Component {
 
             <Text style={styles.interiorContainerText}>Username</Text>
 
-            <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+            <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
               <View style={styles.mediumGrayButton}>
                 <Text style={styles.buttonText}>Vote</Text>
               </View>
