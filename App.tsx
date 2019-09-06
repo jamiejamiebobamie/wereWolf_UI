@@ -13,84 +13,92 @@ export default class Touchables extends Component {
 // onPress={this._onPressButton}
 // onLongPress={this._onLongPressButton}
 
+//on a white background, use TouchableHighlight
+//on a background other than white, use TouchableOpacity
+// or set underlayColor property...
+
+
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigBlueButton}>
+//     <Text style={styles.buttonTextBig}>Create</Text>
+//   </View>
+// </TouchableHighlight>
+//
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigRedButton}>
+//     <Text style={styles.buttonTextBig}>Cancel</Text>
+//   </View>
+// </TouchableHighlight>
+//
+// <View style={styles.interiorContainerGraySelect}>
+//
+//     <Text style={styles.interiorContainerText}>Username</Text>
+//
+//     <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
+//       <View style={styles.mediumGrayButton}>
+//         <Text style={styles.buttonText}>Vote</Text>
+//       </View>
+//     </TouchableOpacity>
+//
+// </View>
+//
+// <View style={styles.interiorContainerGraySelect}>
+//
+//     <Text style={styles.interiorContainerText}>Username</Text>
+//
+//     <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
+//       <View style={styles.mediumGrayButton}>
+//         <Text style={styles.buttonText}>Vote</Text>
+//       </View>
+//     </TouchableOpacity>
+//
+// </View>
+//
+// <View style={styles.interiorContainerWhiteSelect}>
+//
+//     <Text style={styles.interiorContainerText}>Username</Text>
+//
+//     <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//       <View style={styles.smallRedButton}>
+//         <Text style={styles.buttonText}>Kick</Text>
+//       </View>
+//     </TouchableHighlight>
+//
+// </View>
+//
+// <View style={styles.interiorContainerWhiteSelect}>
+//
+//     <Text style={styles.interiorContainerText}>Username</Text>
+//
+//     <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//       <View style={styles.smallRedButton}>
+//         <Text style={styles.buttonText}>Kick</Text>
+//       </View>
+//     </TouchableHighlight>
+//
+// </View>
+//
+// <View style={styles.interiorContainerGrayViewBorder}>
+//
+//     <Text style={styles.titleTextInterior}>You Died</Text>
+//
+// </View>
+
+
+
   render() {
     return (
       <View style={styles.container}>
 
             <Text style={styles.titleText} >Werewolf</Text>
 
-        <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-          <View style={styles.bigBlueButton}>
-            <Text style={styles.buttonTextBig}>Create</Text>
-          </View>
-        </TouchableHighlight>
-
-        <TouchableOpacity onPress={this._onPressButton}>
-          <View style={styles.bigRedButton}>
-            <Text style={styles.buttonTextBig}>Cancel</Text>
-          </View>
-        </TouchableOpacity>
-
-        <View style={styles.interiorContainerGraySelect}>
-
-            <Text style={styles.interiorContainerText}>Username</Text>
-
-            <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
-              <View style={styles.mediumGrayButton}>
-                <Text style={styles.buttonText}>Vote</Text>
-              </View>
-            </TouchableHighlight>
-
-        </View>
-
-        <View style={styles.interiorContainerGraySelect}>
-
-            <Text style={styles.interiorContainerText}>Username</Text>
-
-            <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
-              <View style={styles.mediumGrayButton}>
-                <Text style={styles.buttonText}>Vote</Text>
-              </View>
-            </TouchableHighlight>
-
-        </View>
-
-        <View style={styles.interiorContainerWhiteSelect}>
-
-            <Text style={styles.interiorContainerText}>Username</Text>
-
-            <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-              <View style={styles.smallRedButton}>
-                <Text style={styles.buttonText}>Kick</Text>
-              </View>
-            </TouchableHighlight>
-
-        </View>
-
-        <View style={styles.interiorContainerWhiteSelect}>
-
-            <Text style={styles.interiorContainerText}>Username</Text>
-
-            <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-              <View style={styles.smallRedButton}>
-                <Text style={styles.buttonText}>Kick</Text>
-              </View>
-            </TouchableHighlight>
-
-        </View>
-
-        <View style={styles.interiorContainerGrayViewBorder}>
-
-            <Text style={styles.titleTextInterior}>You Died</Text>
-
-        </View>
-
-
 
       </View>
     );
   }
 }
+
+// icon, hamburgerMenu, input fields
 
 const styles = StyleSheet.create({
   container: {
