@@ -92,8 +92,8 @@ export default class Touchables extends Component {
 
 // **********
 // 'You died component'
-// interiorContainerGrayViewBorderRadius
-// <View style={styles.interiorContainerGrayViewBorderRadius}>
+// interiorContainerGrayView
+// <View style={styles.interiorContainerGrayView}>
 //
 //     <Text style={styles.titleTextInterior}>You Died</Text>
 //
@@ -191,16 +191,6 @@ const styles = StyleSheet.create({
   },
 
   interiorContainerGrayView: {
-    backgroundColor: 'rgb(221,221,221)',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems:'center',
-    width: 260,
-    padding:10,
-    marginBottom: 30,
-  },
-
-  interiorContainerGrayViewBorderRadius: {
     backgroundColor: 'rgb(221,221,221)',
     flexDirection: 'row',
     justifyContent: 'center',
