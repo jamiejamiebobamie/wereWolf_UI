@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
+import { Platform,
+        StyleSheet,
+        Text,
+        TouchableHighlight,
+        TouchableOpacity,
+        TouchableNativeFeedback,
+        TouchableWithoutFeedback,
+        View,
+        Image,
+        ScrollView,
+        TextInput,
+        Button,
+        InputAccessoryView, } from 'react-native';
 
 export default class Touchables extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {text: 'Placeholder Text'};
+  }
+
   _onPressButton() {
     alert('You tapped the button!')
   }
@@ -17,7 +34,7 @@ export default class Touchables extends Component {
 //on a background other than white, use TouchableOpacity
 // or set underlayColor property...
 
-
+            // <Text style={styles.titleText} >Werewolf</Text>
 // <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
 //   <View style={styles.bigBlueButton}>
 //     <Text style={styles.buttonTextBig}>Create</Text>
@@ -84,35 +101,68 @@ export default class Touchables extends Component {
 //
 // </View>
 
+// <View style={styles.icon}>
+//   <Image
+//     style={{width: 200, height: 200}}
+//     source={require('./public/img/test_img_icon.png')}
+//   />
+// </View>
+// <View style={styles.interiorContainerGrayViewBorderRadius}>
+//
+//     <Text style={styles.titleTextInterior}>You Died</Text>
+//
+// </View>
+
 
 
   render() {
+      const inputAccessoryViewID = "uniqueID";
+
     return (
       <View style={styles.container}>
 
-            <Text style={styles.titleText} >Werewolf</Text>
-
+            <ScrollView keyboardDismissMode="interactive">
+              <TextInput
+                style={{
+                  padding: 10,
+                  paddingTop: 50,
+                }}
+                inputAccessoryViewID={inputAccessoryViewID}
+                onChangeText={text => this.setState({text})}
+                value={this.state.text}
+              />
+            </ScrollView>
+            <InputAccessoryView nativeID={inputAccessoryViewID}>
+              <Button
+                onPress={() => this.setState({text: 'Placeholder Text'})}
+                title="Reset Text"
+              />
+            </InputAccessoryView>
 
       </View>
     );
   }
 }
 
-// icon, hamburgerMenu, input fields
+// hamburgerMenu, input fields
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingTop: 30,
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
+    paddingBottom: 30,
   },
 
   titleText: {
       textAlign: 'center',
-      padding: 50,
+      padding: 30,
       color: 'black',
       // marginBottom: 30,
       fontSize: 50,
+      marginBottom: 15,
+      marginBottom: 15,
   },
 
   titleTextInterior: {
@@ -120,7 +170,7 @@ const styles = StyleSheet.create({
       padding: 20,
       color: 'black',
       // marginBottom: 30,
-      fontSize: 40,
+      fontSize: 50,
   },
 
   interiorContainerGraySelect: {
@@ -161,15 +211,16 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
 
-  interiorContainerGrayViewBorder: {
+  interiorContainerGrayViewBorderRadius: {
     backgroundColor: 'rgb(221,221,221)',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems:'center',
     width: 260,
-    // padding:,
+    marginTop: 30,
     marginBottom: 30,
     borderRadius: 10,
+    padding: 10,
   },
 
   interiorContainerText: {
@@ -225,7 +276,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 5,
     color: 'black'
-  }
+},
+
+icon: {
+    padding: 10,
+    marginBottom: 15,
+    marginBottom: 15,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+}
 });
 
 // import React, { Component } from 'react';
