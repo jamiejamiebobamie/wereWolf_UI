@@ -16,7 +16,7 @@ import { Platform,
 export default class Touchables extends Component {
   constructor(props) {
       super(props);
-      this.state = {text: 'Placeholder Text'};
+      this.state = {text: 'Title'};
   }
 
   _onPressButton() {
@@ -27,26 +27,32 @@ export default class Touchables extends Component {
     alert('You long-pressed the button!')
   }
 
-// onPress={this._onPressButton}
-// onLongPress={this._onLongPressButton}
+// **********
+// 'View title component'
+// titleText
+// <Text style={styles.titleText} >Werewolf</Text>
 
-//on a white background, use TouchableHighlight
-//on a background other than white, use TouchableOpacity
-// or set underlayColor property...
-
-            // <Text style={styles.titleText} >Werewolf</Text>
+// **********
+// 'Start, Back, Host Game, Join Game button component'
+// bigBlueButton
 // <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
 //   <View style={styles.bigBlueButton}>
 //     <Text style={styles.buttonTextBig}>Create</Text>
 //   </View>
 // </TouchableHighlight>
-//
+
+// **********
+// 'Cancel button component'
+// bigRedButton
 // <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
 //   <View style={styles.bigRedButton}>
 //     <Text style={styles.buttonTextBig}>Cancel</Text>
 //   </View>
 // </TouchableHighlight>
-//
+
+// **********
+// 'Join game and vote player component'
+// interiorContainerGraySelect + interiorContainerText + mediumGrayButton
 // <View style={styles.interiorContainerGraySelect}>
 //
 //     <Text style={styles.interiorContainerText}>Username</Text>
@@ -56,97 +62,86 @@ export default class Touchables extends Component {
 //         <Text style={styles.buttonText}>Vote</Text>
 //       </View>
 //     </TouchableOpacity>
-//
-// </View>
-//
-// <View style={styles.interiorContainerGraySelect}>
-//
-//     <Text style={styles.interiorContainerText}>Username</Text>
-//
-//     <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
-//       <View style={styles.mediumGrayButton}>
-//         <Text style={styles.buttonText}>Vote</Text>
-//       </View>
-//     </TouchableOpacity>
-//
-// </View>
-//
-// <View style={styles.interiorContainerWhiteSelect}>
-//
-//     <Text style={styles.interiorContainerText}>Username</Text>
-//
-//     <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-//       <View style={styles.smallRedButton}>
-//         <Text style={styles.buttonText}>Kick</Text>
-//       </View>
-//     </TouchableHighlight>
-//
-// </View>
-//
-// <View style={styles.interiorContainerWhiteSelect}>
-//
-//     <Text style={styles.interiorContainerText}>Username</Text>
-//
-//     <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-//       <View style={styles.smallRedButton}>
-//         <Text style={styles.buttonText}>Kick</Text>
-//       </View>
-//     </TouchableHighlight>
-//
-// </View>
-//
-// <View style={styles.interiorContainerGrayViewBorder}>
-//
-//     <Text style={styles.titleTextInterior}>You Died</Text>
 //
 // </View>
 
+// **********
+// 'Kick player element'
+// interiorContainerWhiteSelect + interiorContainerText + smallRedButton
+// <View style={styles.interiorContainerWhiteSelect}>
+//
+//     <Text style={styles.interiorContainerText}>Username</Text>
+//
+//     <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//       <View style={styles.smallRedButton}>
+//         <Text style={styles.buttonText}>Kick</Text>
+//       </View>
+//     </TouchableHighlight>
+//
+// </View>
+
+// **********
+// 'Display icon / image element'
+// icon
 // <View style={styles.icon}>
 //   <Image
 //     style={{width: 200, height: 200}}
 //     source={require('./public/img/test_img_icon.png')}
 //   />
 // </View>
+
+// **********
+// 'You died component'
+// interiorContainerGrayViewBorderRadius
 // <View style={styles.interiorContainerGrayViewBorderRadius}>
 //
 //     <Text style={styles.titleTextInterior}>You Died</Text>
 //
 // </View>
 
+// **********
+// Title, Max Players, Desried Roles component
+// inputBox
+// <TextInput
+//   style={styles.inputBox}
+//   onChangeText={text => this.setState({text})}
+//   value={this.state.text}
+// />
+
+// ??????????
+// Extra stuff related to the 'inputBox' element:
+// const inputAccessoryViewID = "uniqueID";
+//                 inputAccessoryViewID={inputAccessoryViewID}
+// <ScrollView keyboardDismissMode="interactive">
+//   <TextInput
+//     style={styles.inputBox}
+//     inputAccessoryViewID={inputAccessoryViewID}
+//     onChangeText={text => this.setState({text})}
+//     value={this.state.text}
+//   />
+// </ScrollView>
+// <InputAccessoryView nativeID={inputAccessoryViewID} style={{backgroundColor: 'blue',}}>
+//   <Button
+//     onPress={() => this.setState({text: 'Placeholder Text'})}
+//     title="Reset Text"
+//     style={{backgroundColor: 'pink',}}
+//   />
+// </InputAccessoryView>
 
 
+
+// TO-DO :: hamburgerMenu, differently-sized-font inputBoxes
   render() {
-      const inputAccessoryViewID = "uniqueID";
-
     return (
       <View style={styles.container}>
-
-            <ScrollView keyboardDismissMode="interactive">
-              <TextInput
-                style={{
-                  padding: 10,
-                  paddingTop: 50,
-                }}
-                inputAccessoryViewID={inputAccessoryViewID}
-                onChangeText={text => this.setState({text})}
-                value={this.state.text}
-              />
-            </ScrollView>
-            <InputAccessoryView nativeID={inputAccessoryViewID}>
-              <Button
-                onPress={() => this.setState({text: 'Placeholder Text'})}
-                title="Reset Text"
-              />
-            </InputAccessoryView>
 
       </View>
     );
   }
 }
 
-// hamburgerMenu, input fields
-
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     paddingTop: 30,
@@ -156,21 +151,19 @@ const styles = StyleSheet.create({
   },
 
   titleText: {
-      textAlign: 'center',
-      padding: 30,
-      color: 'black',
-      // marginBottom: 30,
-      fontSize: 50,
-      marginBottom: 15,
-      marginBottom: 15,
+    textAlign: 'center',
+    padding: 30,
+    color: 'black',
+    fontSize: 50,
+    marginBottom: 15,
+    marginBottom: 15,
   },
 
   titleTextInterior: {
-      textAlign: 'center',
-      padding: 20,
-      color: 'black',
-      // marginBottom: 30,
-      fontSize: 50,
+    textAlign: 'center',
+    padding: 20,
+    color: 'black',
+    fontSize: 50,
   },
 
   interiorContainerGraySelect: {
@@ -183,7 +176,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 
-
   interiorContainerWhiteSelect: {
     backgroundColor: 'white',
     flexDirection: 'row',
@@ -191,14 +183,11 @@ const styles = StyleSheet.create({
     alignItems:'center',
     width: 260,
     padding: 10,
-    // paddingLeft:10,
-    // paddingRight:10,
     marginBottom: 10,
     borderRadius: 10,
     borderColor: 'black',
     borderStyle: 'solid',
     borderWidth: 1,
-
   },
 
   interiorContainerGrayView: {
@@ -228,8 +217,6 @@ const styles = StyleSheet.create({
     color: 'rgb(136,136,136)',
 },
 
-
-
   bigBlueButton: {
     marginBottom: 20,
     width: 260,
@@ -237,6 +224,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#2196F3'
   },
+
   bigRedButton: {
     marginBottom: 20,
     width: 260,
@@ -262,7 +250,6 @@ const styles = StyleSheet.create({
       borderColor: 'black',
       borderStyle: 'solid',
       borderWidth: 1,
-      // borderThickness:
   },
 
   buttonTextBig: {
@@ -284,104 +271,17 @@ icon: {
     marginBottom: 15,
     alignItems: 'center',
     justifyContent: 'space-around',
-}
-});
+},
 
-// import React, { Component } from 'react';
-// import { StyleSheet, Text, View, Button} from 'react-native';
-// import Constants from 'expo-constants';
-// // import WButton from './src/WButton.tsx'
-//
-//
-// export default class App extends Component {
-//
-//     constructor(props){
-//         super(props)
-//         this.state = {hi:"hello"}
-//     }
-//
-//
-//     // wButton(props){
-//     //     return (
-//     //         <Button
-//     //           title={props.text}
-//     //           onPress={props.callBack}
-//     //           // style={props.size}
-//     //         />
-//     //     )
-//     // }
-//
-//
-//
-// render(){
-//     return (
-//       <View style={styles.container}>
-//         <Text>Open up App.tsx to start working on your app!</Text>
-//         <Button title='hello1' style={{color: 'red',width: '100%',flex:1, backgroundColor: 'red',}}/>
-//         <Button title='hello2' style={styles.big2}/>
-//         <Button title='hello3' style={styles.medium}/>
-//         <Button title='hello3' style={styles.small}/>
-//         <View style={styles.buttonContainer}>
-//           <Button
-//             title="Press Me"
-//           />
-//       </View>
-//     </View>
-//     );
-// }
-//
-// }
-// //
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'black',
-//     alignItems: 'center',
-//     justifyContent: 'space-around',
-//   },
-//
-//
-// //button styles
-//   big1: {
-//       color: 'red',
-//       width: '100%',
-//       flex:1,
-//
-//       backgroundColor: 'red',
-//   },
-//
-//   big2: {
-//       color: 'blue',
-//       width: '100%',
-//       flex:1,
-//
-//       backgroundColor: 'blue',
-//   },
-//
-//   medium: {
-//       color: 'grey',
-//       width: '100%',
-//       flex:1,
-//
-//       backgroundColor: 'grey',
-//   },
-//
-//   small: {
-//       color: 'red',
-//       width: '100%',
-//       flex:1,
-//
-//       backgroundColor: 'red',
-//
-//   },
-//
-//   burgerMenu: {
-//       color: 'white',
-//
-//       backgroundColor: 'white',
-//   },
-//   buttonContainer: {
-//   margin: 20
-// },
-//
-// });
+inputBox: {
+    padding: 20,
+    marginTop: 30,
+    marginBottom: 30,
+    width: 260,
+    backgroundColor: 'rgb(221,221,221)',
+    color: 'rgb(136,136,136)',
+    fontSize: 40,
+    textAlign: 'center'
+},
+
+});
