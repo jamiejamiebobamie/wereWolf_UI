@@ -108,34 +108,233 @@ export default class Touchables extends Component {
 //   value={this.state.text}
 // />
 
-// ??????????
-// Extra stuff related to the 'inputBox' element:
-// const inputAccessoryViewID = "uniqueID";
-//                 inputAccessoryViewID={inputAccessoryViewID}
-// <ScrollView keyboardDismissMode="interactive">
-//   <TextInput
-//     style={styles.inputBox}
-//     inputAccessoryViewID={inputAccessoryViewID}
-//     onChangeText={text => this.setState({text})}
-//     value={this.state.text}
+
+// VIEWS ::
+
+// homeScreen
+// <Text style={styles.titleText} >Werewolf</Text>
+// <View style={styles.icon}>
+//   <Image
+//     style={{width: 200, height: 200}}
+//     source={require('./public/img/test_img_icon.png')}
 //   />
-// </ScrollView>
-// <InputAccessoryView nativeID={inputAccessoryViewID} style={{backgroundColor: 'blue',}}>
-//   <Button
-//     onPress={() => this.setState({text: 'Placeholder Text'})}
-//     title="Reset Text"
-//     style={{backgroundColor: 'pink',}}
+// </View>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigBlueButton}>
+//     <Text style={styles.buttonTextBig}>Host Game</Text>
+//   </View>
+// </TouchableHighlight>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigBlueButton}>
+//     <Text style={styles.buttonTextBig}>Join a Game</Text>
+//   </View>
+// </TouchableHighlight>
+//-----------
+
+// settingsScreen
+// <Text style={styles.titleText}>Settings</Text>
+// <TextInput
+//   style={styles.inputBox}
+//   onChangeText={text => this.setState({text})}
+//   value={this.state.text}
+// />
+//-----------
+
+// gameCreation
+// <TextInput
+//   style={styles.inputBox}
+//   onChangeText={text => this.setState({text})}
+//   value={this.state.text}
+// />
+// <TextInput
+//   style={styles.inputBox}
+//   onChangeText={text => this.setState({text})}
+//   value={this.state.text}
+// />
+// <TextInput
+//   style={styles.inputBox}
+//   onChangeText={text => this.setState({text})}
+//   value={this.state.text}
+// />
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigBlueButton}>
+//     <Text style={styles.buttonTextBig}>Create</Text>
+//   </View>
+// </TouchableHighlight>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigRedButton}>
+//     <Text style={styles.buttonTextBig}>Cancel</Text>
+//   </View>
+// </TouchableHighlight>
+//-----------
+
+// joinScreen
+//     <Text style={styles.titleText}>Join a Game</Text>
+//     <Text style={styles.titleTextUnderline}>Local Games</Text>
+//     <View style={styles.interiorContainerGraySelect}>
+//         <Text style={styles.interiorContainerText}>Lobby</Text>
+//         <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
+//           <View style={styles.mediumGrayButton}>
+//             <Text style={styles.buttonText}>Join</Text>
+//           </View>
+//         </TouchableOpacity>
+//     </View>
+//     <View style={styles.interiorContainerGraySelect}>
+//         <Text style={styles.interiorContainerText}>Lobby</Text>
+//         <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
+//           <View style={styles.mediumGrayButton}>
+//             <Text style={styles.buttonText}>Join</Text>
+//           </View>
+//         </TouchableOpacity>
+//     </View>
+//   <Text style={styles.titleTextUnderline}>Lobby Name</Text>
+//     <TextInput
+//       style={styles.inputBox}
+//       onChangeText={text => this.setState({text})}
+//       value={this.state.text}
+//     />
+//     <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//       <View style={styles.bigRedButton}>
+//         <Text style={styles.buttonTextBig}>Cancel</Text>
+//       </View>
+//     </TouchableHighlight>
+//-----------
+
+// identityScreen -- Werewolf
+// <Text style={styles.titleText}>You are a Werewolf.</Text>
+// <View style={styles.icon}>
+//   <Image
+//     style={{width: 200, height: 200}}
+//     source={require('./public/img/test_img_icon.png')}
 //   />
-// </InputAccessoryView>
+// </View>
+// <View>
+//     <Text style={styles.interiorContainerText}>Try to kill the villagers.</Text>
+// </View>
+// <View>
+//     <Text style={styles.interiorContainerText}>You're fellow werewolves are...</Text>
+// </View>
+// <View>
+//     <Text style={styles.interiorContainerText}>[werewolf names..]</Text>
+// </View>
+//-----------
+
+// identityScreen -- Villager
+// <Text style={styles.titleText}>You are a Villager.</Text>
+// <View style={styles.icon}>
+//   <Image
+//     style={{width: 200, height: 200}}
+//     source={require('./public/img/test_img_icon.png')}
+//   />
+// </View>
+// <View>
+//     <Text style={styles.interiorContainerText}>Try to survive the werewolves.</Text>
+// </View>
+//-----------
+
+// lobbyScreen
+// <Text style={styles.titleText}>Game Name</Text>
+// <View style={styles.interiorContainerWhiteSelect}>
+// <Text style={styles.interiorContainerText}>Username</Text>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.smallRedButton}>
+//     <Text style={styles.buttonText}>Kick</Text>
+//   </View>
+// </TouchableHighlight>
+// </View>
+// <View style={styles.interiorContainerWhiteSelect}>
+// <Text style={styles.interiorContainerText}>Username</Text>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.smallRedButton}>
+//     <Text style={styles.buttonText}>Kick</Text>
+//   </View>
+// </TouchableHighlight>
+// </View>
+// <View style={styles.interiorContainerWhiteSelect}>
+// <Text style={styles.interiorContainerText}>Username</Text>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.smallRedButton}>
+//     <Text style={styles.buttonText}>Kick</Text>
+//   </View>
+// </TouchableHighlight>
+// </View>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigBlueButton}>
+//     <Text style={styles.buttonTextBig}>Start</Text>
+//   </View>
+// </TouchableHighlight>
+//-----------
+
+// nightScreen / dayScreen
+// <View style={styles.scene}></View>
+// <View style={styles.voting}>
+//     <View style={styles.interiorContainerGraySelect}>
+//         <Text style={styles.interiorContainerText}>Username</Text>
+//         <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
+//           <View style={styles.mediumGrayButton}>
+//             <Text style={styles.buttonText}>Vote</Text>
+//           </View>
+//         </TouchableOpacity>
+//     </View>
+//     <View style={styles.interiorContainerGraySelect}>
+//         <Text style={styles.interiorContainerText}>Username</Text>
+//         <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
+//           <View style={styles.mediumGrayButton}>
+//             <Text style={styles.buttonText}>Vote</Text>
+//           </View>
+//         </TouchableOpacity>
+//     </View>
+//     <View style={styles.interiorContainerGraySelect}>
+//         <Text style={styles.interiorContainerText}>Username</Text>
+//         <TouchableOpacity onPress={this._onPressButton} underlayColor="white">
+//           <View style={styles.mediumGrayButton}>
+//             <Text style={styles.buttonText}>Vote</Text>
+//           </View>
+//         </TouchableOpacity>
+//     </View>
+// </View>
+//-----------
+
+// helpScreen
+// <Text style={styles.titleText}>How To Play</Text>
+// <View style={styles.interiorContainerGrayView}>
+//     <Text style={styles.interiorContainerText}>blah blah understand how to play the game</Text>
+// </View>
+//-----------
+
+// deathScreen
+// <View style={styles.icon}>
+//   <Image
+//     style={{width: 200, height: 200}}
+//     source={require('./public/img/test_img_icon.png')}
+//   />
+// </View>
+// <View style={styles.interiorContainerGrayViewBorderRadius}>
+//     <Text style={styles.titleTextInterior}>You Died</Text>
+// </View>
+//-----------
+
+// endScreen
+// <Text style={styles.titleText}>[Insert Name of Winners] Win</Text>
+// <View style={styles.icon}>
+//   <Image
+//     style={{width: 200, height: 200}}
+//     source={require('./public/img/test_img_icon.png')}
+//   />
+// </View>
+// <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+//   <View style={styles.bigBlueButton}>
+//     <Text style={styles.buttonTextBig}>Play Again</Text>
+//   </View>
+// </TouchableHighlight>
+//-----------
 
 
-
-// TO-DO :: hamburgerMenu, differently-sized-font inputBoxes
   render() {
     return (
-      <View style={styles.container}>
+        <View style={styles.container}>
 
-      </View>
+        </View>
     );
   }
 }
@@ -144,7 +343,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    paddingTop: 30,
+    paddingTop: 40,
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: 30,
@@ -155,8 +354,17 @@ const styles = StyleSheet.create({
     padding: 30,
     color: 'black',
     fontSize: 50,
-    marginBottom: 15,
-    marginBottom: 15,
+    marginBottom: 5,
+    marginBottom: 5,
+  },
+
+  titleTextUnderline: {
+    textAlign: 'center',
+    padding: 5,
+    color: 'black',
+    fontSize: 25,
+    marginBottom: 0,
+    textDecorationLine: 'underline',
   },
 
   titleTextInterior: {
@@ -190,7 +398,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 
-  interiorContainerGrayView: {
+  interiorContainerGrayViewBorderRadius: {
     backgroundColor: 'rgb(221,221,221)',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -199,6 +407,17 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30,
     borderRadius: 10,
+    padding: 10,
+  },
+
+  interiorContainerGrayView: {
+    backgroundColor: 'rgb(221,221,221)',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems:'center',
+    width: 260,
+    marginTop: 30,
+    marginBottom: 30,
     padding: 10,
   },
 
@@ -265,13 +484,21 @@ icon: {
 
 inputBox: {
     padding: 20,
-    marginTop: 30,
-    marginBottom: 30,
+    marginTop: 5,
+    marginBottom: 5,
     width: 260,
     backgroundColor: 'rgb(221,221,221)',
     color: 'rgb(136,136,136)',
     fontSize: 40,
     textAlign: 'center'
 },
+
+scene: {
+    flex: 2,
+},
+
+voting: {
+    flex: 1,
+}
 
 });
